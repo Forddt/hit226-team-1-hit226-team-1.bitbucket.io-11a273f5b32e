@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Registration Form</title>
+      <link rel="stylesheet" type="text/css" href="assets/style.css">
+      <!-- For Phone Number -->
+      <link rel="stylesheet" type="text/css" href="assets/iti.css"/>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+      <!-- ========================== -->
+      <!-- AutoFill -->
+      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <script src="assets/autofill.js"></script>
+      <!-- ============ -->
+   </head>
+   <body>
+      <main class="mt40">
+         <div class="container card">
+            <h1 class="texcen">Registration Form</h1>
+            <div class="myborder">
+               <form name="RegForm" action="" onsubmit="return multiFunc()" method="post">
+                  <div class="mt12 form-group">
+                     <label>Name</label>
+                     <input type="text" name="name" class="form-control" placeholder="Full Name Here">
+                  </div>
+                  <div class="mt12 form-group">
+                     <label>Address</label>
+                     <input type="text" name="address" id="address" class="form-control" placeholder="Address Here">
+                  </div>
+                  <div class="mt12 form-group">
+                     <label>Email Address</label>
+                     <input type="email" name="email" class="form-control" placeholder="Email Here" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+                  </div>
+                  <div class="mt12 form-group">
+                     <label>Password</label>
+                     <input type="password" name="password" class="form-control" placeholder="Password">
+                  </div>
+                  <div class="mt12 form-group">
+                     <label>Telephone Number</label><br>
+                     <input type="tel" id="phone" name="phone" class="form-control" required>
+                     <div class="alert alert-info" style="display: none;"></div>
+                  </div>
+                  <div class="mt12 form-group">
+                     <label>Date of Birth</label>
+                     <input type="date" name="dob" class="form-control">
+                  </div>
+                  <div class="mt12 form-group">
+                     <input type="submit" name="Submit" class="btn">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </main>
+      <script>
+         function multiFunc(){
+             process(event);
+             myvalidation();
+             
+         }
+         
+         const info = document.querySelector(".alert-info");
+         function process(event) {
+         
+         event.preventDefault();
+         const phoneNumber = phoneInput.getNumber();
+         info.style.display = "";
+         if (isNaN(phoneNumber) === false) {info.innerHTML = `Phone number in E.164 format: <strong style="color:green;">${phoneNumber}</strong>`;}else{info.innerHTML = `Invalid Format: <strong style="color:red;">${phoneNumber}</strong>`;}
+         
+         }
+         
+         
+         
+          function myvalidation() {
+              var name = document.forms["RegForm"]["name"];
+              var address = document.forms["RegForm"]["address"];
+              var email = document.forms["RegForm"]["email"];
+              var password = document.forms["RegForm"]["password"];
+              var phone = document.forms["RegForm"]["phone"];
+              var dob = document.forms["RegForm"]["dob"];    
+              
+          
+              if (name.value == "") {
+                  window.alert("Please enter your name");
+                  name.focus();
+                  return false;
+              }
+          
+              if (address.value == "") {
+                  window.alert("Please enter your address.");
+                  address.focus();
+                  return false;
+              }
+          
+              if (email.value == "") {
+                  window.alert("Please enter a valid e-mail address.");
+                  email.focus();
+                  return false;
+              }
+          
+              if (phone.value == "") {
+                  window.alert("Please enter your phone number.");
+                  phone.focus();
+                  return false;
+              }
+         
+          
+              if (password.value == "") {
+                  window.alert("Please enter your password");
+                  password.focus();
+                  return false;
+              }
+         
+              if (dob.value == "") {
+                  window.alert("Please enter your date of birth");
+                  dob.focus();
+                  return false;
+              }
+         
+              //=============== Calculating AGE from DOB Input =============
+         
+              var dob = new Date(dob.value);  
+             //calculate month difference from current date in time  
+             var month_diff = Date.now() - dob.getTime();  
+               
+             //convert the calculated difference in date format  
+             var age_dt = new Date(month_diff);   
+               
+             //extract year from date      
+             var year = age_dt.getUTCFullYear();  
+               
+             //now calculate the age of the user  
+             var age = Math.abs(year - 1970);  
+         
+             if (age < 13) {
+                  window.alert("Year is less than 13");
+                  dob.focus();
+                  return false;
+              }
+         
+              if (age > 50) {
+                  window.alert("Here is the help link ");
+                  dob.focus();
+                  return false;
+              }
+         
+         
+         //=============== Calculating AGE from DOB Input =============
+          
+              return true;
+          }
+      </script>
+      <script>
+         const phoneInputField = document.querySelector("#phone");
+         const phoneInput = window.intlTelInput(phoneInputField, {
+         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+         });
+      </script>
+      <script
+         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initAutocomplete&libraries=places&v=weekly&channel=2"
+         async
+         >
+      </script>
+   </body>
+</html>

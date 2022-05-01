@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registration Form</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script defer src="read.js" ></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="registration.css">
+</head>
+
+  
+<div class = "container">
+  <h2>Registration Form</h2> 
+  <hr>
+ 
+  <form class = "form" id = "form" method="POST" onsubmit = "var ret=validateForm(); if (ret) myFunction() " >
+        
+        <div class = "form-control" > 
+         <label >First name</label><br>
+         <input type="text" id="fname" placeholder="First Name" required><br>
+         </div>
+
+        <div class = "form-control" >
+         <label for="lname">Last name:</label><br>
+         <input type="text" id="lname" name="lname"  placeholder="Last Name" required><br>
+        </div>   
+
+        <div class = "form-control" >
+         <label for="address">Address:</label><br>
+         <input type="text" id="address" name="Address"  placeholder="Address"  required><br>
+        </div>
+
+         <div class = "form-control" >
+         <label for="email">Enter your email:</label><br>
+         <input type="email" placeholder="Email" id="email" name="email"   required><br><br>
+        </div>
+
+         <div class = "form-control" >
+         <label for="number">Phone no:</label><br>
+         <input type="number" placeholder="Ph no." id="number" name="number"  required ><br><br>
+        </div>
+         
+         <button type="submit" class = "submitbtn">Submit</button>
+         
+      
+    
+  </form>
+</div>
+
+ 
+</html>
+
+
+
+  
+ 
+
+
+  

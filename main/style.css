@@ -1,0 +1,26 @@
+body{
+  font-family: sans-serif;
+  background: #FFFFFC;
+}
+
+img{
+  width: 300px;
+}
+
+li{
+  display: inline;
+}
+
+.item{
+  background: #42858C;
+  text-decoration: none;
+  padding: 18px;
+  border-style: solid;
+  border-width: medium;
+  color: white;
+}
+
+.desc{
+  margin: 30px 250px;
+  text-align: justify;
+}

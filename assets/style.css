@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Beau+Rivage&display=swap');
+
+body{
+	font-family: 'Beau Rivage', cursive;
+    background-color: #6495ED;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+.btn{
+	width: 100%;
+	cursor: pointer;
+	color: #fff;
+    background-color: #E9967A;
+    border-color: #007bff;
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px dotted transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn:hover{
+	background-color: #F08080;
+}
+
+.mt40{
+    margin-top: 40px;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px dotted #FA8072;
+    border-radius: 0.25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.myborder{
+    border: 1px dotted;
+    border-radius: 5px;
+    padding: 30px;
+    margin-bottom: 15px;
+}
+
+.texcen{
+	text-align: center;
+}
+
+.mt12{
+	margin-top: 12px;
+}
+
+.form-text {
+    display: block;
+    margin-top: 0.25rem;
+}
+
+.text-muted {
+    color: #6c757d!important;
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+}
+}
+
+@media (min-width: 992px){
+	.container {
+    width: 970px;
+}
+}
+
+@media (min-width: 768px){
+	.container {
+    width: 750px;
+}
+}
+
